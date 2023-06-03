@@ -191,6 +191,9 @@ body  {
     body  {  
         background-image: url(./images/mobile-bg.png);
     }
+    .section {
+        position: static;
+    }
     .logo {
         border-radius: 2px;
         height: 50px;
@@ -199,6 +202,7 @@ body  {
     .message-header-upper {
         text-align: center;
         margin: 0 30px;
+        font-size: 18px;
     }
     .flex-container {
         flex-direction: column;
@@ -214,12 +218,16 @@ body  {
     .message-left-side-upper,
     .message-right-side-upper {
         top: 15%;
-        margin: 0 12%;
+        margin: 5% 12%;
+        position: static;
+        font-size: 18px;
     }
     .message-left-side-lower,
     .message-right-side-lower {
         top: 25%;
         margin: 5% 15%;
+        position: static;
+        font-size: 16px;
     }
     .left-button-login, 
     .right-button-signup {
@@ -227,5 +235,7 @@ body  {
         width: 250px;
         font-size: 16px;
         top: 55%;
+        position: static;
+        margin-top: 10px;
     }
   }

@@ -1,8 +1,8 @@
 .log-in-pop-up {
     position: absolute; 
-    top: 120%;
+    top: 125%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.3);
+    transform: translate(-50%, -50%) scale(0.1);
     opacity:0;
     transition: top 1000ms ease-in-out;
     z-index: 0;
@@ -25,7 +25,7 @@
     box-shadow: 2px 2px 20px;
     background-color: rgb(221, 238, 239);
     margin: 5% 35%;
-    height: 47vh;
+    height: 50vh;
     margin-top: 200px;
     text-align: center;
 }
@@ -68,3 +68,36 @@
     text-align: center;
     margin: 0;
 } 
+
+@media only screen and (max-width: 900px) {
+    .form-control-login {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .button-login  {
+        margin-top: 40px;
+        padding: 8px;
+    }
+    .login-container {
+        width: 45vw;
+        margin-left: 27%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .form-control-login {
+        font-size: 14px;
+        padding: 8px;
+    }
+    .button-login  {
+        margin-top: 40px;
+        padding: 8px;
+    }
+    .login-container {
+        width: 70vw;
+        margin-left: 15%;
+    }
+    .section .active{
+        position: fixed;
+    }
+
+}

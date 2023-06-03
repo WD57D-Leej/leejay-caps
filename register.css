@@ -1,14 +1,9 @@
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100%;
-}
+
 .register-popup-section {
     position: absolute; 
-    top: 120%;
+    top: 125%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(0.3);
+    transform: translate(-50%, -50%) scale(0.1);
     opacity:0;
     transition: top 1000ms ease-in-out;
     z-index: 0;
@@ -44,6 +39,8 @@ body {
     text-align: center;
     position: relative;
     flex:65% ;
+    margin:0 3%;
+    margin-top: 35px;
 }
 .logo-register {
     height: 15%;
@@ -53,27 +50,13 @@ body {
     top: 7%;
     left: 25%;
 }
-.form-register {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:stretch;
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: 0;
-    padding: 0;
-    width: 90%;
-}
 .create-text {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     font-size: 1.9rem;
     width: 100%;
     text-align: left;
-    margin-bottom: 20px;
-    margin-top: 0;
+   margin: 20px 0;
 }
 .create-message {
     margin: 10px 0;
@@ -84,7 +67,7 @@ body {
     margin: 0;
     margin-bottom: 5px;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;  
 }
 .form-control {
@@ -115,15 +98,12 @@ body {
     background-color: rgb(1, 1, 196);
 }
 .button-lower {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 50px;
 }
 .close-button {
     background-color: rgb(229, 54, 54);
     position: absolute;
-    margin-top: 8px;
+    margin-top: 0px;
     left: 91%;
     border-radius: 2px;
     cursor: pointer;
@@ -149,7 +129,7 @@ body {
 .gender-container input[type="radio"] {
     margin: 0 0 0 10%;
 }
-.form-register .text-group {
+.text-group {
     text-align: left;
     font-size: 14px;
     margin: 10px 0 0 5px;
@@ -157,17 +137,34 @@ body {
 
 
 @media only screen and (max-width: 900px) {
-    .register-popup-section.active {
-        transform: translate(-50%, -50%) scale(0.8);
-
-    }
     .form-control {
         font-size: 14px;
+        padding: 8px;
+    }
+    .register-container {
+        width: 80vw;
+        height: 800px;
+        margin-left: 10%;
+    }
+    .gender-container .gender-label {
+        padding: 8px 0;
+    }
+    .logo-register {
+        height: 20%;
+        width: 100%;
+        top: 10%;
+        left: 100%;
     }
 }
 @media only screen and (max-width: 600px) {
     .left-popup {
-        flex: 0;
+        flex: none;
         background-image: none;
     }
+    .register-container {
+        width: 80vw;
+        margin-left: 10%;
+        height: 90vh;
+    }
+  
 }
