@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+}
+.register-popup-section {
+    position: absolute; 
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity:0;
+    transition: top 1000ms ease-in-out;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(156, 171, 174); 
+    background-color: rgba(17, 190, 253, 0.4); 
+}
+.register-popup-section.active {
+    opacity: 1;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    height: 100%;
+    z-index: 5;
+}
+.register-container {
+    display: flex;
+    flex-direction: row;  
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px;
+    background-color: rgb(221, 238, 239);
+    margin: 5% 25%;
+    height: 83vh;
+}
+.left-popup {
+    flex: 35%;
+    background-image: url(./images/register.png);
+    background-repeat: no-repeat;
+    position: relative;
+}
+.pop-up-register {
+    height: 75vh;
+    text-align: center;
+    position: relative;
+    flex:65% ;
+}
+.logo-register {
+    height: 15%;
+    width: 57%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 7%;
+    left: 25%;
+}
+.form-register {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:stretch;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    width: 90%;
+}
+.create-text {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.9rem;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+.create-message {
+    margin: 10px 0;
+    font-size: 15px;
+    text-align: left;
+}
+.form-group {
+    margin: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;  
+}
+.form-control {
+    border-radius: 5px;
+    padding: 10px 0;
+    padding-left: 10px;
+    width: 100%;
+    font-size: 16px;
+}
+.form-control-user-2 {
+    margin-left: 4px;
+}
+.button-Sign-up {
+    cursor: pointer;
+    padding: 9px;
+    border-radius: 20px;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: rgb(0, 94, 255);
+    color: whitesmoke;
+    border: none;
+    margin-top: 30px;
+    width: 70%;
+    align-self: center;
+    text-align: center;
+}   
+.button-Sign-up:hover {
+    background-color: rgb(1, 1, 196);
+}
+.button-lower {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.close-button {
+    background-color: rgb(229, 54, 54);
+    position: absolute;
+    margin-top: 8px;
+    left: 91%;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.form-control-margin,
+.gender-container .gender-label-margin{
+    margin: 0 4px;
+}
+.gender-container,
+.div-birth-date {
+    display: flex;
+}
+  
+.gender-container .gender-label {
+    border-radius: 5px;
+    padding: 10px 0;
+    padding-left: 10px;
+    width: 100%;
+    border: 1px solid gray;
+    background-color: rgb(255, 255, 255);
+    font-size: 16px;
+} 
+.gender-container input[type="radio"] {
+    margin: 0 0 0 10%;
+}
+.form-register .text-group {
+    text-align: left;
+    font-size: 14px;
+    margin: 10px 0 0 5px;
+}
+
+
+@media only screen and (max-width: 900px) {
+    .register-popup-section.active {
+        transform: translate(-50%, -50%) scale(0.8);
+
+    }
+    .form-control {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .left-popup {
+        flex: 0;
+        background-image: none;
+    }
+}
