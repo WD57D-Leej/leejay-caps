@@ -1,0 +1,70 @@
+.log-in-pop-up {
+    position: absolute; 
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity:0;
+    transition: top 1000ms ease-in-out;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255); 
+    /* background-color: rgba(207, 233, 243, 0.842);  */
+}
+.log-in-pop-up.active {
+    opacity: 1;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    height: 100%;
+    z-index: 5;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;  
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px;
+    background-color: rgb(221, 238, 239);
+    margin: 5% 35%;
+    height: 47vh;
+    margin-top: 200px;
+    text-align: center;
+}
+.logo-login {
+    position: absolute;
+    top:15%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+.form-group-login {
+    margin-top: 7%;
+}
+.form-control-login {
+    border-radius: 5px;
+    padding: 12px 0;
+    padding-left: 10px;
+    width: 100%;
+    font-size: 16px;
+    margin: 2% 7%;
+}
+.button-login, .button-create-account {
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: rgb(0, 94, 255);
+    color: whitesmoke;
+    border: none;
+    margin-top: 30px;
+    width: 85%;
+    align-self: center;
+    text-align: center;
+    margin:2% 0;
+}  
+.button-create-account {
+    background-color: rgb(10, 193, 44) !important;
+}
+.or-text, .below-text {
+    text-align: center;
+    margin: 0;
+} 

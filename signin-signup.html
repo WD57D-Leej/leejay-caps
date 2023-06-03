@@ -7,6 +7,7 @@
     initial-scale=1.0">
     <link rel="stylesheet" href="./signin-signup.css">
     <link rel="stylesheet" href="./signin.css">
+    <link rel="stylesheet" href="./login.css">
     <title>Log in</title>
 </head>
 <body>
@@ -34,7 +35,7 @@
                                   Enter into a realm of divine connection as you log in,</p>                
                         <p class="message-left-side-lower">where faith in God intertwines with your online journey, 
                             illuminating every step with grace and purpose.</p>    
-                        <button class="left-button-login">Sign in</button>           
+                        <button class="left-button-login" id="main-page-signin">Sign in</button>           
                 </div>
             </div>
             <div class="side-right">
@@ -284,12 +285,36 @@
                                 <button class="button-Sign-up" type="submit" id="button-sign-up" >Register</button>             
                         </div>
                     </form>
-                    <p class="button-lower">Already have an account? <a 
+                    <p class="button-lower">Already have an account? <a id="modal-signup-login-botton"
                         style="text-decoration: none;
                             font-weight: 400;" href="#">Login</a></p>
                    
                 </div>
             </div>
+        </div>
+
+            <!-- log in div -->
+
+        <div class="log-in-pop-up">
+            <img class="logo-login" src="./images/Faith-removebg-preview-1.png" alt="">
+                <div class="login-container"> 
+                    <form action="">       
+                        <div class="form-group form-group-login">
+                            <label for="email"></label>
+                            <input type="email" id="email" name="email" placeholder="Enter Email" class="form-control-login" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password"></label>
+                            <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control-login" required>
+                        </div>
+                        <a href="#" style="text-align: center;
+                                        text-decoration: none;">Forgot password?</a>
+                        <button class="button-login" type="submit" id="button-login" >Log in</button> 
+                    </form>
+                    <p class="or-text">or</p>
+                    <button class="button-create-account" type="submit" id="button-create-new-account">Create new account</button>  
+                </div> 
+                <p class="below-text">"The Lord is my shepherd, I lack nothing." (Psalm 23:1)</p>
         </div>
     </section>
     <script src="./signin.js"></script>

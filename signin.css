@@ -15,7 +15,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: rgb(156, 171, 174); 
-    background-color: rgba(17, 190, 253, 0.4); 
+    background-color: rgba(17, 190, 253, 0.686); 
 }
 .register-popup-section.active {
     opacity: 1;
