@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./signin-signup.css">
     <link rel="stylesheet" href="./register.css">
     <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./forgotpass.css">
     <title>Log in</title>
 </head>
 <body>
@@ -58,8 +59,8 @@
                 <div class="left-popup">
                     <img class="logo-register" src="./images/Faith-removebg-preview.png" alt="">
                 </div>
-                <div class="pop-up-register">
-                    <button class="close-button" id="close-Button">x</button>
+                <div class="right-pop-up-register">
+                    <button class="close-button" id="#">x</button>
                     <form action="#">
                                 <p class="create-text">Create Account</p>
                                 <!-- <p class="create-message">Embrace a life filled with divine purpose 
@@ -281,7 +282,7 @@
                                             <!-- <input type="submit" value="Submit"> -->
                                 </div>
                             </div>
-                                <button class="button-Sign-up" type="submit" id="button-sign-up" >Register</button>
+                                <button class="button-Sign-up" type="submit" id="#" >Register</button>
                     </form>
                     <p class="button-lower">Already have an account? <a id="modal-signup-login-botton"
                         style="text-decoration: none;
@@ -304,7 +305,8 @@
                             <label for="password"></label>
                             <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control-login" required>
                         </div>
-                        <a href="#" style="text-align: center;
+                        <a href="#" id="forgotpass-click"
+                                 style="text-align: center;
                                         text-decoration: none;">Forgot password?</a>
                         <button class="button-login" type="submit" id="button-login" >Log in</button> 
                     </form>
@@ -313,6 +315,38 @@
                 </div> 
                 <p class="below-text">"The Lord is my shepherd, I lack nothing." (Psalm 23:1)</p>
         </div>
+
+        <!-- forgot password form -->
+
+        <div class="forgotpass-background-popup">
+            <img class="forgotpass-plantdecor" src="./images/pana-removebg-preview.png" alt="">
+            <div class="forgotpass-container">
+                <div class="forgotpass-divdecor">
+                    <button class="close-button" id="close-button-forgot">x</button>
+                </div>
+                
+                <!-- <div class="forgotpass-left">   
+                  
+                </div> -->
+                <div class="forgotpass-right">
+                    <img class="forgotpass-logo" src="./images/padlock.png" alt=""> <!-- logo -->
+                    <p class="forgotpass-textheader">Forgot Password?</p>
+                    <p class="forgotpass-text">Please enter your email address to recieve a verification code.</p>
+                    <form action="">
+                        <div>
+                            <label for="email"></label>
+                            <input type="email" id="email" name="email" placeholder="Enter Email" class="form-control-forgotP" required>
+                        </div>
+                        <div>
+                            <button class="forgotpass-button" type="submit" id="button-forgotpass">Send Email</button> 
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
     </section>
     <script src="./signin.js"></script>
 </body>

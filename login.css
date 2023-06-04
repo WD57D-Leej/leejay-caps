@@ -46,7 +46,8 @@
     font-size: 16px;
     margin: 2% 7%;
 }
-.button-login, .button-create-account {
+.button-login,
+.button-create-account {
     cursor: pointer;
     padding: 12px;
     border-radius: 5px;
@@ -93,11 +94,20 @@
         padding: 8px;
     }
     .login-container {
-        width: 70vw;
-        margin-left: 15%;
+        height: 60vh;
+        width: 95vw;
+        margin-left: 3%;
+        margin-right: 3%;
     }
     .section .active{
         position: fixed;
     }
-
+    .button-login,
+    .button-create-account{
+        margin-top: 40px;
+        padding: 15px 0;
+    }
+    .form-control-login {
+        padding: 15px;
+    }
 }
