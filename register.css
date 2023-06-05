@@ -113,7 +113,7 @@
     cursor: pointer;
 }
 .form-control-margin,
-.gender-container .gender-label-margin{
+.gender-container .gender-label-margin {
     margin: 0 4px;
 }
 .gender-container,
@@ -177,7 +177,8 @@
     }
     .button-Sign-up,
     .form-control,
-    .gender-container .gender-label {
+    .gender-container .gender-label,
+    .OTP-number {
         padding: 15px;
         width: 100%;
     } 

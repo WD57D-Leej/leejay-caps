@@ -43,4 +43,5 @@ function addActiveClass(elementId, className) {
   addActiveClass("modal-signup-login-botton", "log-in-pop-up");
   addActiveClass("button-create-new-account", "register-popup-section");
   addActiveClass("forgotpass-click", "forgotpass-background-popup");
+  addActiveClass("button-forgotpass", "verification-background-popup");
   

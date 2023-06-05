@@ -1,0 +1,80 @@
+.verification-background-popup {
+    position: absolute; 
+    top: 125%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity:0;
+    transition: top 1000ms ease-in-out;
+    z-index: 0;
+    background-image: url(./images/SentMessage.png);
+    width: 100%;
+    background-color: rgb(170, 198, 229); 
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+}
+
+.verification-paperplanedecor {
+    top:30% !important;
+    left: 68% !important;
+    height: 250px !important;
+}
+.placeholder-cube {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    margin: 0 auto;
+}
+.verification-input {
+    width: 40px;
+    height: 40px;
+    font-size:16px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+@media only screen and (max-width: 900px) {
+    .verification-background-popup {
+        background-size: 100%;
+    }
+    .verification-container {
+        width: 50vw;
+        top:40%;
+        left: 70%;
+    }
+    .verification-textheader,
+    .verify-logo
+    {
+        margin-top: 40px;
+    }
+    .verification-button {
+        margin-top: 50px;
+        padding: 15px 0;
+    }
+    .verification-plantdecor { 
+        height: 400px;
+        top:67%;
+        left: 10%;
+        
+    }
+}
+  
+@media only screen and (max-width: 600px) {
+    .verification-container {
+        height: 90vh;
+        width: 90vw;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top:50%;
+        left: 50%;
+    }
+   .verify-logo,
+   .verification-textheader,
+   .placeholder-cube {
+        margin-top: 40px;
+    }
+    .verification-button {
+        margin-top: 50px;
+        padding: 15px 0;
+    }
+}
