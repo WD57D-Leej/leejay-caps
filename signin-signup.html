@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./register.css">
     <link rel="stylesheet" href="./login.css">
     <link rel="stylesheet" href="./forgotpass.css">
+    <link rel="stylesheet" href="./verification.css">
     <title>Log in</title>
 </head>
 <body>
@@ -264,7 +265,7 @@
                                     <!-- <input type="submit" value="Submit"> -->
                                 </div>
                                 <p class="text-group">Gender</p>
-                                <div class="gender-container">   <!-- flex this -->
+                                <div class="gender-container">   
                                     <label for="male" class="gender-label">
                                             Male
                                         <input type="radio" id="male" name="gender" value="male" placeholder="Male">                                 
@@ -279,7 +280,6 @@
                                             Other
                                         <input type="radio" id="other" name="gender" value="other" placeholder="Other">        
                                     </label>  
-                                            <!-- <input type="submit" value="Submit"> -->
                                 </div>
                             </div>
                                 <button class="button-Sign-up" type="submit" id="#" >Register</button>
@@ -324,10 +324,6 @@
                 <div class="forgotpass-divdecor">
                     <button class="close-button" id="close-button-forgot">x</button>
                 </div>
-                
-                <!-- <div class="forgotpass-left">   
-                  
-                </div> -->
                 <div class="forgotpass-right">
                     <img class="forgotpass-logo" src="./images/padlock.png" alt=""> <!-- logo -->
                     <p class="forgotpass-textheader">Forgot Password?</p>
@@ -339,6 +335,37 @@
                         </div>
                         <div>
                             <button class="forgotpass-button" type="submit" id="button-forgotpass">Send Email</button> 
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- verification password form -->
+
+        <div class="verification-background-popup">
+            <img class="verification-paperplanedecor" src="./images/sent-removebg-preview.png" alt="">
+            <div class="verification-container">
+                <div class="verification-divdecor">
+                    <button class="close-button" id="close-button-forgot">x</button>
+                </div>
+                <div class="verification-right">
+                    <img class="verify-logo" src="./images/verify.png" alt=""> <!-- logo -->
+                    <p class="verification-textheader">Verify OTP</p>
+                    <p class="verification-text">Please enter 4 digit code sent to your Email.</p>
+                    <form action="">
+
+                        <div class="placeholder-cube">
+                            <input type="text" class="verification-input" maxlength="1" />
+                            <input type="text" class="verification-input" maxlength="1" />
+                            <input type="text" class="verification-input" maxlength="1" />
+                            <input type="text" class="verification-input" maxlength="1" />
+                        </div>
+                          
+                        <div>
+                            <button class="verification-button" type="submit" id="button-forgotpass">Verify</button> 
                         </div>
                     </form>
 

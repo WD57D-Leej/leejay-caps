@@ -13,14 +13,16 @@
     background-size: 50%;
     background-repeat: no-repeat;
 }
-.forgotpass-background-popup.active {
+.forgotpass-background-popup.active,
+.verification-background-popup.active {
     opacity: 1;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
     height: 100%;
     z-index: 5;
 }
-.forgotpass-plantdecor {
+.forgotpass-plantdecor,
+.verification-paperplanedecor {
     position: absolute;
     height: 400px;
     transform: translate(-50%, -50%);
@@ -28,7 +30,8 @@
     left: 73%;
     z-index: 1;
 }
-.forgotpass-container {
+.forgotpass-container,
+.verification-container {
     border-radius: 5px;
     box-shadow: none !important;
     background-color: rgb(221, 238, 239);
@@ -39,23 +42,27 @@
     top:40%;
     left: 60%;
 }
-.forgotpass-divdecor {
+.forgotpass-divdecor,
+.verification-divdecor {
     width: 100%;
     border: 1px solid gray;
     height: 30px;
     background-color: aliceblue;
     border-radius: 5px 5px 0 0;
 }
-.forgotpass-logo {
+.forgotpass-logo,
+.verify-logo {
     width: 60%;
     margin-top: 30px;
 }
 
-.forgotpass-right {
+.forgotpass-right,
+.verification-right {
     height: 75vh;
     text-align: center;
 }
-.forgotpass-textheader {
+.forgotpass-textheader,
+.verification-textheader {
     font-family: Arial, sans-serif;
     font-weight: bold;
     font-size: 1.7rem;
@@ -63,7 +70,8 @@
     margin:0;
     margin-top: 30px;
 }
-.forgotpass-text {
+.forgotpass-text,
+.verification-text {
     font-family: Arial, sans-serif;
     font-weight:none !important;
     font-size: 14px;
@@ -76,7 +84,8 @@
     width: 85%;
     font-size: 16px;
 }
-.forgotpass-button {
+.forgotpass-button,
+.verification-button {
     cursor: pointer;
     padding: 9px;
     border-radius: 5px;
