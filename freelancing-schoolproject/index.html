@@ -143,8 +143,8 @@ p {
     border-radius: 10px;
     box-shadow: 2px 2px 20px;
     width: 60vw;
-    margin: 5% auto;
-    height: 80%;
+    margin: 3% auto;
+    height: 85%;
     /* margin-top: 100px; */
     text-align: center;
     background-color: rgb(42, 112, 34);   
@@ -171,11 +171,27 @@ input {
     border-radius: 3px;
     border: none;
 }
+label {
+    font-weight: bold;
+}
+select {
+    width: 20%;
+    box-shadow: 2px 2px 10px rgba(18, 47, 14, 0.627);
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+    font-weight: bold;
+    color: rgba(15, 85, 16, 0.842);
+}
+option{
+    font-weight: bold;
+}
 .placeH,
 .placeHL,
 .placeHLL {
     width: 97%;
-    margin-top: 20px;
+    margin-top: 10px;
     font-weight: bold;
     box-shadow: 2px 2px 10px rgba(18, 47, 14, 0.627);
 }
@@ -274,6 +290,14 @@ table {
                             <label for="hInput"></label>
                             <input type="number" class="placeH placeH-w" id="hInput" step="any" placeholder="Step size (h):" required><br><br>
                         </div>
+                        <div>
+                            <label for="methodInput">Finite Difference Method:</label>
+                            <select id="methodInput" onchange="clearTable()">
+                              <option value="forward">Forward</option>
+                              <option value="backward">Backward</option>
+                              <option value="centered">Centered</option>
+                            </select><br><br>
+                        </div>
                         <div class="flex-row">
                             <input type="button" class="placeHL" value="First Derivative" onclick="computeDerivative(1)">
                             <input type="button" class="placeHL placeH-w" value="Second Derivative" onclick="computeDerivative(2)">
@@ -282,14 +306,14 @@ table {
                         </div>
                         <div class="flex-row-last">
                             <input type="button" class="placeHLL" value="All Derivatives" onclick="computeAllDerivatives()">
-                            <input type="button" class="placeHLL placeH-w" value="Clear" onclick="clearForm()">
+                            <input type="button" class="placeHLL placeH-w" value="Clear" onclick="clearTable()">
                         </div>               
                     </form>
                           
                     <table id="resultsTable">
                         <tr>
-                        <th>Derivative</th>
-                        <th>Value</th>
+                            <th>Derivative</th>
+                            <th>Value</th>
                         </tr>
                     </table>
                 </div> 
@@ -304,15 +328,21 @@ table {
         document.getElementsByClassName("log-in-pop-up")[0].classList.add("active");
         });
 
-        function computeFiniteDifferenceDerivative(f, xi, h, order) {
+        function computeFiniteDifferenceDerivative(f, xi, h, order, method) {
           const parser = math.parser();
           parser.evaluate('f(x) = ' + f);
     
           let derivative = 0;
           for (let i = 0; i < order; i++) {
-            derivative = (parser.evaluate('f(' + (xi + h) + ')') - parser.evaluate('f(' + xi + ')')) / h;
-            xi += h;
-          }
+      if (method === 'forward') {
+        derivative = (parser.evaluate('f(' + (xi + h) + ')') - parser.evaluate('f(' + xi + ')')) / h;
+      } else if (method === 'backward') {
+        derivative = (parser.evaluate('f(' + xi + ')') - parser.evaluate('f(' + (xi - h) + ')')) / h;
+      } else if (method === 'centered') {
+        derivative = (parser.evaluate('f(' + (xi + h) + ')') - parser.evaluate('f(' + (xi - h) + ')')) / (2 * h);
+      }
+      xi += h;
+    }
     
           return derivative;
         }
@@ -321,8 +351,11 @@ table {
           const functionInput = document.getElementById('functionInput').value;
           const xInput = parseFloat(document.getElementById('xInput').value);
           const hInput = parseFloat(document.getElementById('hInput').value);
-    
-          const derivative = computeFiniteDifferenceDerivative(functionInput, xInput, hInput, order);
+          const methodInput = document.getElementById('methodInput').value;
+  
+          clearTable();
+
+          const derivative = computeFiniteDifferenceDerivative(functionInput, xInput, hInput, order, methodInput);
     
           const resultsTable = document.getElementById('resultsTable');
           const newRow = resultsTable.insertRow();
@@ -336,7 +369,11 @@ table {
           const functionInput = document.getElementById('functionInput').value;
           const xInput = parseFloat(document.getElementById('xInput').value);
           const hInput = parseFloat(document.getElementById('hInput').value);
-    
+          const methodInput = document.getElementById('methodInput').value;
+  
+          clearTable();
+
+
           const resultsTable = document.getElementById('resultsTable');
           resultsTable.innerHTML = `
             <tr>
@@ -346,7 +383,7 @@ table {
           `;
     
           for (let i = 1; i <= 4; i++) {
-            const derivative = computeFiniteDifferenceDerivative(functionInput, xInput, hInput, i);
+            const derivative = computeFiniteDifferenceDerivative(functionInput, xInput, hInput, i,  methodInput);
     
             const newRow = resultsTable.insertRow();
             newRow.innerHTML = `
@@ -356,13 +393,13 @@ table {
           }
         }
     
-        function clearForm() {
-          document.getElementById('derivativeForm').reset();
-          document.getElementById('resultsTable').innerHTML = `
-            <tr>
-              <th>Derivative</th>
-              <th>Value</th>
-            </tr>
+        function clearTable() {
+            const resultsTable = document.getElementById('resultsTable');
+            resultsTable.innerHTML = `
+                <tr>
+                    <th>Derivative</th>
+                    <th>Value</th>
+                </tr>
           `;
         }
     
