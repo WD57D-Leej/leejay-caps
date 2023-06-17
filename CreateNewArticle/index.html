@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create New Article Modal</title>
+  <style>
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Article Form Styling */
+    .form-flex-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="file"],
+    .form-group textarea {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      /* margin: 0 auto; */
+    }
+
+    .preview-image {
+      max-width: 90%;
+      max-height: 300px;
+      margin-top: 10px;  
+    }
+
+    #datetime {
+      border: none;
+      text-align: center;
+    }
+
+    #title {
+      text-align: center;
+      max-width: 200px;
+      padding: 10px;
+    }
+
+    #content {
+      width: 100%;
+    }
+
+    .btn-container {
+      text-align: right;
+      margin-top: 10px;
+    }
+
+    .btn-container button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-right: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .btn-container button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <button onclick="openModal()">Create New Article</button>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Create New Article</h2>
+
+      <form id="articleForm" class="form-flex-container">
+
+        <div class="form-group">
+          <label for="image">Image</label>
+          <input type="file" id="image" name="image" accept="image/*" required onchange="previewImage(event)">
+          <img id="preview" class="preview-image" src="#" alt="Preview Image">
+        </div>
+
+        <div class="form-group">
+          <label for="datetime"></label>
+          <input type="text" id="datetime" name="datetime" value="" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="title"></label>
+          <input type="text" id="title" name="title" placeholder="Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="content"></label>
+            <textarea id="content" name="content" rows="4" placeholder="What's your thougths.. ." required></textarea>
+          </div>
+
+        <div class="btn-container">
+          <button type="button" onclick="closeModal()">Close</button>
+          <button type="button" onclick="saveArticle()">Save</button>
+          <button type="button" onclick="publishArticle()">Publish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Modal functionality
+    function openModal() {
+      document.getElementById("modal").style.display = "block";
+      updateDateTime();
+    }
+
+    function closeModal() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    // Update date and time
+    function updateDateTime() {
+      var now = new Date();
+      var datetimeField = document.getElementById("datetime");
+      datetimeField.value = now.toLocaleString();
+    }
+
+    // Preview image
+    function previewImage(event) {
+      var preview = document.getElementById("preview");
+      var file = event.target.files[0];
+      var reader = new FileReader();
+
+      reader.onloadend = function() {
+        preview.src = reader.result;
+      }
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        preview.src = "";
+      }
+    }
+
+    // Save article
+    function saveArticle() {
+      var title = document.getElementById("title").value;
+      var image = document.getElementById("image").value;
+
+      // Perform save operation with the article data
+
+      closeModal();
+    }
+
+    // Publish article
+    function publishArticle() {
+      var title = document.getElementById("title").value;
+      var image = document.getElementById("image").value;
+
+      // Perform publish operation with the article data
+
+      closeModal();
+    }
+  </script>
+</body>
+</html>
